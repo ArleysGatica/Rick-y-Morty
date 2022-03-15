@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Page from './App/Page/Page'
+import Datos from './App/Api/Api'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Page />
+    <Datos />
   </React.StrictMode>,
   document.getElementById('root')
 )

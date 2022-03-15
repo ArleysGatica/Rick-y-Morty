@@ -1,0 +1,27 @@
+
+.page__content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.page__content__card{
+  display: grid;
+  grid-gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.item__info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-direction: column;
+  
+
+}
+

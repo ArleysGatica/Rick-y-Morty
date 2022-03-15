@@ -4,20 +4,20 @@ const Card = ({ data }) => {
   console.log(data);
 
   return (
-
-    <div className="page__content">
+    <>
       <article className='page__content__card'>
         <div className="Item">
           <img src={data.image} alt={data.name} />
         </div>
         <div className="seccion-title">
-          <h2 className="card__title">{data.name}</h2>
-          <p className="card__text">{data.status}</p>
-          <p className="card__text">{data.species}</p>
-          <p className="card__text">{data.type}</p>
+          <h1>{data.name}</h1>
+          <p>{data.status}</p>
+          <p>{data.species}</p>
+          <p>{data.type}</p>
+          <p>{data.species.name === 'Human' ? data.origin.name : data.location.name}</p>
         </div>
       </article>
-    </div>
+    </>
   )
 }
 

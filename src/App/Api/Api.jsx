@@ -14,8 +14,6 @@ const Datos = () => {
       });
   }, []);
 
-  console.log(data);
-
   return (
     <>
       <Page data={data} />

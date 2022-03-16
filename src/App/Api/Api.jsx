@@ -21,12 +21,12 @@ const Datos = () => {
   }, []);
 
   const handleClickNext = () => {
-    fetchCharacters(info.next);
+    fetchData(info.next);
     window.scrollTo(0, 0);
   };
 
   const handleClickPrev = () => {
-    fetchCharacters(info.prev);
+    fetchData(info.prev);
     window.scrollTo(0, 0);
   };
 

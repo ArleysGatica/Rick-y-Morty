@@ -9,11 +9,11 @@ const Card = ({ data }) => {
           <img src={data.image} alt={data.name} />
         </div>
         <div className="seccion-title">
-          <h1>{data.name}</h1>
+          <h1>{`${data.name}`}</h1>
           <p>{data.status}</p>
           <p>{data.species}</p>
           <p>{data.type}</p>
-          <p>{data.species.name === 'Human' ? data.origin.name : data.location.name}</p>
+          <p id='specie'>{data.species.name === 'Human' ? data.origin.name : data.location.name}</p>
         </div>
       </article>
     </>

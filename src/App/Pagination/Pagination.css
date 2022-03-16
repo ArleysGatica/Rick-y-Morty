@@ -6,7 +6,7 @@
   width: 100%;
   gap: 10px;
   background: black;
-
+  padding: 10px;
 }
 
 .pagination__item button{
@@ -14,12 +14,15 @@
   border: none;
   color: #fff;
   padding: 10px;
-  font-size: 10px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
+  cursor: pointer;
+  
 }
 
 .pagination__item button:hover{
   background: #ffc107;
   color: #000;
+
 }

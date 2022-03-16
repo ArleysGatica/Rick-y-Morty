@@ -2,7 +2,6 @@ import React from 'react'
 import { Header } from '../Header/Header';
 import './PageStyle.css';
 import Card from './Card';
-import Pagination from '../Pagination/Pagination';
 
 const Page = ({ data }) => {
 
@@ -14,8 +13,6 @@ const Page = ({ data }) => {
           <Card key={item.id} data={item} />
         ))}
       </div>
-      <Pagination
-      />
     </div >
   )
 }

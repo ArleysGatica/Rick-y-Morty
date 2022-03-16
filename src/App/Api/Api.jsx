@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Page from '../Page/Page';
+import Pagination from '../Pagination/Pagination';
 
 const Datos = () => {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ const Datos = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      axios.get('https://rickandmortyapi.com/api/character')
+      await axios.get('https://rickandmortyapi.com/api/character')
         .then(res => {
           setData(res.data.results);
           setInfo(res.data.info);
@@ -21,21 +22,37 @@ const Datos = () => {
   }, []);
 
   const handleClickNext = () => {
-    fetchData(info.next);
-    window.scrollTo(0, 0);
-  };
+    const { next } = info;
+    axios.get(next)
+      .then(res => {
+        setData(res.data.results);
+        setInfo(res.data.info);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   const handleClickPrev = () => {
-    fetchData(info.prev);
-    window.scrollTo(0, 0);
-  };
+    const { prev } = info;
+    axios.get(prev)
+      .then(res => {
+        setData(res.data.results);
+        setInfo(res.data.info);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   return (
     <>
       <Page data={data}
-        info={info}
-        handleClick={handleClickNext}
+      />
+      <Pagination
+        handleClickNext={handleClickNext}
         handleClickPrev={handleClickPrev}
+        info={info}
       />
     </>
   )

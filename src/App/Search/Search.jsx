@@ -11,10 +11,12 @@ const Search = ({ handleOnChange, handleOnSubmit, Busqueda }) => {
           onChange={handleOnChange}
           value={Busqueda}
         />
-        <button type="submit"
-          onClick={handleOnSubmit}>
-          Search
-        </button>
+        <div className='search-btn'>
+          <button type="submit"
+            onClick={handleOnSubmit}>
+            Search
+          </button>
+        </div>
       </div>
     </section>
 

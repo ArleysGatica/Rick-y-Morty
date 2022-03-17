@@ -41,3 +41,9 @@ header{
   object-fit: contain;
   border-radius: 20%;
 }
+
+@media screen and (max-width: 768px) {
+  header{
+    height: auto;
+  }
+}

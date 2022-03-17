@@ -33,6 +33,7 @@
     color: white;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: auto;
     gap: 10px;
 }
@@ -53,4 +54,46 @@
   color: #ffc107;
   transform: rotate3d(0, 0, 1, -10deg);
   transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .page__content__card{
+    width: 100%;
+    height: auto;
+  }
+
+  .Item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .seccion-title{
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  .seccion-title h1{
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+  }
+
+  .seccion-title h1:hover{
+  font-weight: bold;
+  font-size: 13px;
+  color: #ffc107;
+  transform: rotate3d(0, 0, 1, -10deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.seccion-title p{
+  font-size: 12px;
+  font-weight: bold;
+      display: flex;
+    text-align: center;
+}
+ 
 }

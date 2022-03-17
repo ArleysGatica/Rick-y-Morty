@@ -6,6 +6,8 @@ import Pagination from '../Pagination/Pagination';
 const Datos = () => {
   const [data, setData] = useState([]);
   const [info, setInfo] = useState({});
+  const [Busqueda, setBusqueda] = useState('');
+  const [Resultado, setResultado] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +35,24 @@ const Datos = () => {
       });
   }
 
+  const handleOnChange = (e) => {
+    setBusqueda(e.target.value);
+  }
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const url = `https://rickandmortyapi.com/api/character/?name=${Busqueda}`;
+    axios.get(url)
+      .then(res => {
+        setResultado(res.data);
+        setData(res.data.results);
+        setInfo(res.data.info);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   const handleClickPrev = () => {
     const { prev } = info;
     axios.get(prev)
@@ -48,14 +68,19 @@ const Datos = () => {
   return (
     <>
       <Page data={data}
+        handleOnChange={handleOnChange}
+        handleOnSubmit={handleOnSubmit}
+        Resultado={Resultado}
       />
+
       <Pagination
         handleClickNext={handleClickNext}
         handleClickPrev={handleClickPrev}
         info={info}
       />
+
     </>
   )
 }
 
-export default Datos;
+export default Datos; 

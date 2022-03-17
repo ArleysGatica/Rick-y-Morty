@@ -51,7 +51,6 @@
   font-weight: bold;
   font-size: 23.5px;
   color: #ffc107;
-
   transform: rotate3d(0, 0, 1, -10deg);
   transition: all 0.5s ease-in-out;
 }

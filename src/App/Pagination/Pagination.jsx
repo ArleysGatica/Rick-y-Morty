@@ -3,9 +3,6 @@ import './Pagination.css';
 
 const Pagination = ({ handleClickNext, handleClickPrev, info }) => {
 
-
-  console.log(info);
-
   return (
     <div className="pagination">
       < div className="pagination__item">

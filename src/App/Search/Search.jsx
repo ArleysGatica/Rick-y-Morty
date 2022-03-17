@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Search.css';
 
 const Search = ({ handleOnChange, handleOnSubmit, Busqueda }) => {
@@ -8,12 +7,14 @@ const Search = ({ handleOnChange, handleOnSubmit, Busqueda }) => {
     <section className="search">
       <div className="search__item">
         <input type="text"
-          placeholder="Search"
+          placeholder="..."
           onChange={handleOnChange}
           value={Busqueda}
         />
-        <button type="submit" onClick={handleOnSubmit}>Search</button>
-
+        <button type="submit"
+          onClick={handleOnSubmit}>
+          Search
+        </button>
       </div>
     </section>
 

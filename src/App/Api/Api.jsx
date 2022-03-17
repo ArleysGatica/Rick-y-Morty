@@ -23,10 +23,16 @@ const Datos = () => {
     fetchData();
   }, []);
 
-  const handleClickNext = () => {
-    const { next } = info;
-    axios.get(next)
+  const handleOnChange = (e) => {
+    setBusqueda(e.target.value);
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const url = `https://rickandmortyapi.com/api/character/?name=${Busqueda}`;
+    axios.get(url)
       .then(res => {
+        setResultado(res.data);
         setData(res.data.results);
         setInfo(res.data.info);
       })
@@ -35,16 +41,10 @@ const Datos = () => {
       });
   }
 
-  const handleOnChange = (e) => {
-    setBusqueda(e.target.value);
-  }
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-    const url = `https://rickandmortyapi.com/api/character/?name=${Busqueda}`;
-    axios.get(url)
+  const handleClickNext = () => {
+    const { next } = info;
+    axios.get(next)
       .then(res => {
-        setResultado(res.data);
         setData(res.data.results);
         setInfo(res.data.info);
       })
@@ -70,7 +70,7 @@ const Datos = () => {
       <Page data={data}
         handleOnChange={handleOnChange}
         handleOnSubmit={handleOnSubmit}
-        Resultado={Resultado}
+        Busqueda={Busqueda}
       />
 
       <Pagination

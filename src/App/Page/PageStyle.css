@@ -56,6 +56,27 @@
   transition: all 0.5s ease-in-out;
 }
 
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botones button{
+  width: 35px;
+  height: 35px;
+  border-radius: 19px;
+  border: none;
+  color: rgb(245, 12, 12);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+
 @media screen and (max-width: 768px) {
   .page__content__card{
     width: 100%;

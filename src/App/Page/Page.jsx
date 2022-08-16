@@ -4,7 +4,8 @@ import './PageStyle.css';
 import Card from './Card';
 import Search from '../Search/Search';
 
-const Page = ({ data, handleOnSubmit, handleOnChange, Busqueda }) => {
+const Page = ({ data, handleOnSubmit, 
+    handleOnChange, Busqueda }) => {
 
   console.log();
 

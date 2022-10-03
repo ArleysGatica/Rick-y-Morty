@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdOutlineFavoriteBorder, MdFavorite  } from "react-icons/md";
 
 const Card = ({ data }) => {
 
     const [localStorage, setlocalStorage] = useState(false);
     const [favorite, setFavorite] = useState(() => {
+        return [];
+    });
+
+    useEffect(() => {
         try {
             const fav = window.localStorage.getItem('favorite');
+            console.log('favorite', fav);
             return fav ? JSON.parse(fav) : [];
         } catch (e) {
             return [];
         }
-    });
+    }, [favorite]);
 
     const handleFavorite = () => {
         if (!localStorage) {
@@ -26,8 +31,9 @@ const Card = ({ data }) => {
             setFavorite(newFavorite);
             console.log(`${data.name} removed from favorite`);
         }
-        setlocalStorage( !localStorage);
-          }
+        
+        setlocalStorage(favorite);
+    }
 
     return (
         <>
